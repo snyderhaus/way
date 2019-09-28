@@ -19,7 +19,8 @@ export const DEFAULT_STATE = {
 	],
 	home: {
 		title: 'Product Designer',
-		overview: 'Currently at Align, transforming smiles through orthodontic solutions. Previously worked as a client-side developer at SIMbiosys'
+		overview: 'Currently at Align, transforming smiles through orthodontic solutions.',
+		overview2: 'Previously worked as a client-side developer at SIMbiosys.'
 	},
 	works: [
 		{

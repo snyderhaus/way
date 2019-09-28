@@ -36,11 +36,7 @@ class Navigation extends PureComponent {
 	}
 
 	handleClick = () => {
-		// this.props.handleLoad();
-	}
-
-	handleLogout = () => {
-		this.props.handleLogin(false);
+		this.props.history.push('/');
 	}
 
 	toggleMenu = () => {
@@ -80,11 +76,6 @@ class Navigation extends PureComponent {
 						</li>
 						<li className="nav-item">
 							<a className="nav-link" onClick={this.handleScrollBottom}>Contact</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#" title="Sign out" onClick={this.handleLogout}>
-								<i className="fas fa-sign-out-alt" />
-							</a>
 						</li>
 					</ul>
 				}
@@ -127,11 +118,6 @@ class Navigation extends PureComponent {
 								</li>
 								<li className="nav-item">
 									<a className="nav-link" onClick={this.handleScrollBottom}>Contact</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#" title="Sign out" onClick={this.handleLogout}>
-										<i className="fas fa-sign-out-alt" />
-									</a>
 								</li>
 							</ul>
 						</nav>

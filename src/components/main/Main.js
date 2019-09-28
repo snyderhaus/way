@@ -16,14 +16,13 @@ class Main extends Component {
 	}
 
 	state = {
-		loggedIn: this.props.cookies.get('loggedIn'),
+		loggedIn: sessionStorage.getItem('loggedIn') || false,
 		loading: true
 	}
 
 	handleLogin = loggedIn => {
-		const { cookies } = this.props;
-	 
-		cookies.set('loggedIn', loggedIn, { path: '/' });
+		console.log('logging:', loggedIn);
+		sessionStorage.setItem('loggedIn', loggedIn);
 		this.setState({ loggedIn });
 	}
 
@@ -43,16 +42,12 @@ class Main extends Component {
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
-
-		setTimeout(() => {
-			this.setState({ loading: false });
-		} , 2500);
 	}
 
 	render() {
 		const { theme, overflowed } = this.props.context;
 		const { loggedIn } = this.state;
-
+		debugger
 		return (
 			<div className={`Main ${theme || !loggedIn ? 'theme-dark' : ''} ${overflowed ? 'overflowed' : ''}`}>
 				{!loggedIn 
@@ -64,11 +59,7 @@ class Main extends Component {
 								handleLogin={this.handleLogin} 
 							/>
 							<Switch>
-								<Route 
-									exact 
-									path="/" 
-									render={() => <Home handleLoad={this.props.handleLoad} />} 
-								/>
+								<Route exact path="/" render={() => <Home handleLoad={this.props.handleLoad} />} />
 								<Route path="/overview/:id" component={Overview} />
 								<Redirect from="*" to="/" />
 							</Switch>
