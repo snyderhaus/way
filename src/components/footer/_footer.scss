@@ -1,0 +1,20 @@
+.Footer {
+	padding: 183px 0 100px;
+	p {
+		color: #9199A1;
+		font-size: 16px;
+	}
+	h2 {
+		margin: 28px 0 80px;
+		a {
+			position: relative;
+			white-space: nowrap;
+			padding: 5px;
+			transition: color 0.4s cubic-bezier(.25,.8,.25,1);
+			border-bottom: 2px solid #3C3C3C;
+		}
+	}
+	.Social {
+		margin-bottom: 30px;
+	}
+}

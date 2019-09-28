@@ -1,0 +1,14 @@
+.Main {
+	transition: background 0.4s cubic-bezier(.25,.8,.25,1);
+	* { transition: color 0.4s cubic-bezier(.25,.8,.25,1); }
+	&.theme-dark {
+		background: #000;
+		h1, h2, h3, h4, h5, h6 {
+			color: #fff !important;
+		}
+		p {
+			color: #f0f0f0;
+		}
+		.nav-link { color: #FFF; }
+	}
+}
